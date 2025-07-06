@@ -1,9 +1,10 @@
+import uvicorn
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from typing import List, Dict
 from timetable import generate_timetables
-from database import database
 from bson import ObjectId
+from motor.motor_asyncio import AsyncIOMotorClient
 
 app = FastAPI()
 
@@ -117,5 +118,4 @@ async def generate_timetable_endpoint(request: TimetableRequest):
         return []  # Return empty array instead of error object
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

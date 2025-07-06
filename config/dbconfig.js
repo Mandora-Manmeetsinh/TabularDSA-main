@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const con = mongoose
-  .connect("mongodb://localhost:27017/tabularDSA")
+  .connect("mongodb://localhost:27017/TimeTable_Tablu")
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
